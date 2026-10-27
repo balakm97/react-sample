@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Productcard from './component/Productcard';
 
-function Catelog({ addToCart }) {
+function Catelog({ addToCart , searchQuery }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -11,9 +11,13 @@ function Catelog({ addToCart }) {
       .catch(error => console.log(error));
   }, []);
 
+  const filteredProducts = products.filter(product =>
+      product.title.toLowerCase().includes((searchQuery || '').toLowerCase()) 
+  );
+
   return (
     <div className="main-products">
-      {products.map(product => (
+      {filteredProducts.map(product => (
         <Productcard
           key={product.id}
           id={product.id}

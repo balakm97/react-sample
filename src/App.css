@@ -187,12 +187,13 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
   margin-top:30px; 
+  padding:0 20px; 
 }
 .main-header{ margin-top:30px; padding: 0 20px;  }
 .produt-details a{ text-decoration:none; color:#000; }
 .header-count{ color:#000; text-decoration:none; }
-button.add-to-cart:hover , .addtocart:hover{ background-color:#f7f7f7; color:#000; }
-button.add-to-cart , .addtocart{ margin-top: 15px; width: 100%;max-width: 8rem; height: 40px; background-color: #000000; transition:all 0.3s linear;  color:#fff; padding: 10px; border: none; cursor:pointer; }
+button.add-to-cart:hover , .addtocart:hover{ background-color:#f7f7f7; color:#000; border:1px solid #000; }
+button.add-to-cart , .addtocart{ margin-top: 15px; width: 100%;max-width: 8rem; border:1px solid currentColor;  height: 40px; background-color: #000000; transition:all 0.3s linear;  color:#fff; padding: 10px; border: none; cursor:pointer; }
 .header-inner{ display: flex;justify-content: space-between;align-items: center; }
 .product-detail div{ max-width:40rem; margin:0 auto; }
 .product-detail div p{ margin-top:10px; margin-bottom:20px;  }
@@ -295,10 +296,12 @@ button.add-to-cart , .addtocart{ margin-top: 15px; width: 100%;max-width: 8rem; 
   border-radius: 6px;
   cursor: pointer;
   margin-top: 15px;
+  border:1px solid currentColor;
 }
 .btn-checkout:hover {
   background-color: #ffffff;
   color:#000000;
+  border:1px solid #000000;
 }
 .continue-shopping-link {
   display: block;
@@ -307,6 +310,12 @@ button.add-to-cart , .addtocart{ margin-top: 15px; width: 100%;max-width: 8rem; 
   font-size:14px;
   color: #000000;
   text-decoration: none;
+  padding: 7px 12px;
+  border:1px solid #000;
+}
+.continue-shopping-link:hover {
+  background-color:#000;
+  color:#fff; 
 }
 .cart-empty {
   text-align: center;
@@ -397,4 +406,9 @@ button.add-to-cart , .addtocart{ margin-top: 15px; width: 100%;max-width: 8rem; 
 .checkout-success {
   text-align: center;
   padding: 60px 20px;
+}
+.customSearch{
+  max-width:20rem;
+  padding:10px;
+  width:100%;
 }

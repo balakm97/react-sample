@@ -11,7 +11,7 @@ function App() {
   const [cart, setCart] = useState(() => {
     return JSON.parse(localStorage.getItem('cart') || '[]');
   });
-
+  const [searchQuery, setSearchQuery] = useState('');
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
@@ -48,12 +48,11 @@ function App() {
 
   return (
     <div className="container">
-      <Header cartCount={cartCount} />
-
+      <Header cartCount={cartCount} searchQuery={searchQuery} onSearchChange={setSearchQuery} />
       <Routes>
         <Route
           path="/"
-          element={<Catelog addToCart={addToCart} />}
+          element={<Catelog addToCart={addToCart} searchQuery={searchQuery} />}
         />
         <Route
           path="/product/:id"
